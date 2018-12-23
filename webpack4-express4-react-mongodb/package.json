@@ -1,0 +1,45 @@
+{
+  "name": "webpack4-express-react-mongoose",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "prod": "webpack --mode production",
+    "dev": "webpack --mode development",
+    "start": "node ./dist/server.bundle.js"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.4",
+    "http-errors": "^1.7.1",
+    "morgan": "^1.9.1",
+    "path": "^0.12.7",
+    "prop-types": "^15.6.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-helmet": "^5.2.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "webpack": "^4.28.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.11"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/3jin/nodejs-boilerplates/tree/master/webpack4-express-react-mongoose.git"
+  },
+  "author": "Sejin Jeon",
+  "license": "ISC"
+}

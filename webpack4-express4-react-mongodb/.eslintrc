@@ -1,0 +1,15 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "rules": {
+    "linebreak-style": 0,
+    "no-console": 0,
+    "react/jsx-filename-extension": 0,
+    "no-shadow": [2, { "allow": ["err"] }],
+    "no-plusplus": [2, { "allowForLoopAfterthoughts": true }]
+  },
+  "env": {
+    "node": true,
+    "browser": true
+  }
+}
