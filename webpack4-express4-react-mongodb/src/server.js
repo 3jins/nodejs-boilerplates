@@ -4,6 +4,7 @@ import express from 'express';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import renderHTML from './renderHTML';
+import exampleDataAPI from './api/example-data-api';
 
 const server = express();
 
@@ -20,7 +21,9 @@ server.use(cookieParser());
 
 /* server main logic */
 server.use(express.static(distPath));
-server.use(renderHTML);
+server.use('/example-data', exampleDataAPI);
+server.use('/', renderHTML);
+
 
 /* error handling */
 server.use((req, res, next) => {
