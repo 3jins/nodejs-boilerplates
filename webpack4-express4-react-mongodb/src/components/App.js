@@ -1,14 +1,29 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-const App = ({ data }) => <h1>{data}</h1>;
+class App extends Component {
+  componentDidMount() {}
+
+  render() {
+    const { data: { title, content } } = this.props;
+    return (
+      <div>
+        <h1>{title}</h1>
+        <p>{content}</p>
+      </div>
+    );
+  }
+}
 
 App.propTypes = {
-  data: PropTypes.string,
+  data: PropTypes.shape({
+    title: PropTypes.string,
+    content: PropTypes.string,
+  }),
 };
 
 App.defaultProps = {
-  data: 'default',
+  data: { title: 'default title', content: 'default content' },
 };
 
 export default App;
