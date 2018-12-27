@@ -1,4 +1,5 @@
 import ReactDOMServer from 'react-dom/server';
+import './res/favicon.ico';
 
 export default component => (req, res) => res.send(`
   <!doctype html>
@@ -9,6 +10,7 @@ export default component => (req, res) => res.send(`
       <meta property="og:locale" content="ko_KR" />
       <title>Node.js Boilerplate</title>
       <!--<link rel="stylesheet" type="text/css" href="common.css">-->
+      <link rel="shortcut icon" type="image/png" href="favicon.ico">
     </head>
     <body>
       <div id="root">

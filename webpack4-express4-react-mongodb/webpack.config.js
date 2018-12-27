@@ -41,8 +41,8 @@ module.exports = (env, argv) => ({
         loader: 'style-loader!css-loader',
       },
       {
-        test: /\.png$|\.jpg$|\.gif$|\.ttf$|\.eot$|\.woff$|\.woff2$/,
-        loader: 'url-loader',
+        test: /\.ico$|\.png$|\.jpg$|\.gif$|\.ttf$|\.eot$|\.woff$|\.woff2$/,
+        loader: 'file-loader?name=[name].[ext]',
       },
     ],
   },
