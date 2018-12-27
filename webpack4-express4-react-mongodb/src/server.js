@@ -1,9 +1,9 @@
 import path from 'path';
-import createError from 'http-errors';
 import express from 'express';
+import createError from 'http-errors';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
-import renderHTML from './renderHTML';
+import router from './router';
 import exampleDataAPI from './api/example-data-api';
 
 const server = express();
@@ -22,7 +22,7 @@ server.use(cookieParser());
 /* server main logic */
 server.use(express.static(distPath));
 server.use('/example-data', exampleDataAPI);
-server.use('/', renderHTML);
+server.use('/', router);
 
 
 /* error handling */
