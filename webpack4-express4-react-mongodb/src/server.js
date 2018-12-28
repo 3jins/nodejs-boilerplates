@@ -24,7 +24,6 @@ server.use(express.static(distPath));
 server.use('/example-data', exampleDataAPI);
 server.use('/', router);
 
-
 /* error handling */
 server.use((req, res, next) => {
   next(createError(404));
