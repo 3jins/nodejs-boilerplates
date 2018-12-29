@@ -8,7 +8,6 @@ export default component => (req, res) => res.send(`
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta property="og:locale" content="ko_KR" />
       <title>Node.js Boilerplate</title>
-      <!--<link rel="stylesheet" type="text/css" href="common.css" />-->
       <link rel="shortcut icon" type="image/png" href="favicon.ico" />
     </head>
     <body>
