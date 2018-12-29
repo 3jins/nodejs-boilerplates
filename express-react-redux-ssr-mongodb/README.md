@@ -40,3 +40,18 @@ The command below will start `server.bundle.js`.
 $ npm start
 ```
 
+
+
+## Structure
+
+If you want to read description about the common structure of all boilerplates, see [this](https://github.com/3jin/node-boilerplates#common-structure).
+
+### SSR + Redux
+
+### Configuration
+
+#### ESLint
+
+* no-underscore-dangle
+
+    MongoDB make a key named '\_id' in default. So I allowed '\_id' as an exception of this rule.

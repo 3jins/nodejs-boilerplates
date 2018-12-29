@@ -1,5 +1,5 @@
 # nodejs-boilerplates
-* [Webpack4 + Express + React + Mongoose](https://github.com/3jin/nodejs-boilerplates/tree/master/webpack4-express-react-mongoose/)
+* [Webpack + Express + React(Redux, SSR) + Mongoose](https://github.com/3jin/nodejs-boilerplates/tree/master/express-react-redux-ssr-mongodb/)
 
 
 
