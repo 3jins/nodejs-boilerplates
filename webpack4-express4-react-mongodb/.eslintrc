@@ -6,7 +6,8 @@
     "no-console": 0,
     "react/jsx-filename-extension": 0,
     "no-shadow": [2, { "allow": ["err"] }],
-    "no-plusplus": [2, { "allowForLoopAfterthoughts": true }]
+    "no-plusplus": [2, { "allowForLoopAfterthoughts": true }],
+    "no-underscore-dangle": [2, { "allow":  ["_id"] }]
   },
   "env": {
     "node": true,

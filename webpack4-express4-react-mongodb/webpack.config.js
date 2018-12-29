@@ -25,6 +25,13 @@ module.exports = (env, argv) => ({
         options: {
           cacheDirectory: true,
           presets: ['react', 'env'],
+          plugins: [
+            ['transform-object-rest-spread', { useBuiltIns: true }],
+            ['transform-runtime', {
+              polyfill: false,
+              regenerator: true,
+            }],
+          ],
         },
       },
       {

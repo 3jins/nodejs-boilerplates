@@ -21,7 +21,7 @@ server.use(cookieParser());
 
 /* server main logic */
 server.use(express.static(distPath));
-server.use('/example-data', exampleDataAPI);
+server.get('/example-data', exampleDataAPI);
 server.use('/', router);
 
 
