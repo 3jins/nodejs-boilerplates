@@ -23,13 +23,13 @@ To create bundle files(`server.bundle.js`, `client.bundle.js`), run one of these
 * development mode
 
   ```
-  $ npm dev
+  $ npm run dev
   ```
 
 * production mode
 
     ```
-    $ npm prod
+    $ npm run prod
     ```
 
 ### Start the server bundle file
@@ -44,11 +44,19 @@ $ npm start
 
 ## Structure
 
-If you want to read description about the common structure of all boilerplates, see [this](https://github.com/3jin/node-boilerplates#common-structure).
+If you want to read description about the common structure of all boilerplates, see [this](https://github.com/3jin/nodejs-boilerplates#common-structure).
 
-### SSR + Redux
+### React(SSR + Redux)
+
+[The server](https://github.com/3jin/nodejs-boilerplates/blob/master/express-react-redux-ssr-mongodb/src/server.js) renders first, and [the client](https://github.com/3jin/nodejs-boilerplates/blob/master/express-react-redux-ssr-mongodb/src/index.js) hydrates elements. So both the server and the client needs to use all React files(actions, reducers, components). So I didn't separate the server codes and the client codes in different directories.
 
 ### Configuration
+
+#### Webpack
+
+* It uses two entries: `src/server.js` for the server, and `src/index.js` for the client. 
+* It makes `client.bundle.js` and `server.bundle.js` in `dist` directory.
+* Uses loaders for Babel, ESLint, Sass and CSS, and other ordinary files.
 
 #### ESLint
 
