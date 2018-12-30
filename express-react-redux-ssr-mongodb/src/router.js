@@ -5,7 +5,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import ReduxThunk from 'redux-thunk';
 import reducers from './reducers';
-import renderHTML from './renderHTML';
+import renderHTML from './render-html';
 import App from './components/App';
 
 const router = express.Router();
