@@ -1,7 +1,6 @@
 const path = require('path');
 
-module.exports = (env, argv) => ({
-  mode: argv.mode,
+module.exports = {
   entry: {
     server: path.resolve(__dirname, 'src', 'server.js'),
     client: ['babel-polyfill', path.resolve(__dirname, 'src', 'index.js')],
@@ -53,4 +52,4 @@ module.exports = (env, argv) => ({
       },
     ],
   },
-});
+};

@@ -4,8 +4,8 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "prod": "webpack --mode production",
-    "dev": "webpack --mode development",
+    "prod": "webpack --config webpack.prod.js",
+    "dev": "webpack --config webpack.dev.js",
     "start": "node ./dist/server.bundle.js"
   },
   "dependencies": {
@@ -25,7 +25,8 @@
     "react-router-config": "^4.4.0-beta.6",
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "webpack-merge": "^4.1.5"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -50,7 +51,7 @@
     "transform-runtime": "0.0.0",
     "webpack": "^4.28.1",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.11"
+    "webpack-dev-server": "^3.1.14"
   },
   "repository": {
     "type": "git",
