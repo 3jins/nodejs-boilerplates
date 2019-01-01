@@ -5,15 +5,15 @@ import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import { StaticRouter as Router, Switch, Route } from 'react-router-dom';
+import { StaticRouter as Router } from 'react-router-dom';
+import { renderRoutes } from 'react-router-config';
 import { applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import ReduxThunk from 'redux-thunk';
 import exampleDataAPI from './api/example-data-api';
 import reducers from './reducers';
+import routes from './routes';
 import renderHTML from './render-html';
-import App from './components/App';
-import NoMatch from './components/NoMatch';
 
 const server = express();
 const httpPort = process.env.NODE_ENV === 'production' ? 80 : 3000;
@@ -35,10 +35,7 @@ server.use('/', (req, res) => {
   const component = ReactDOMServer.renderToString(
     <Provider store={store}>
       <Router location={req.url}>
-        <Switch>
-          <Route exact path="/" component={App} />
-          <Route path="/*" component={NoMatch} />
-        </Switch>
+        { renderRoutes(routes) }
       </Router>
     </Provider>,
   );
