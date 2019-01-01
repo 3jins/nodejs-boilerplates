@@ -12,9 +12,9 @@ module.exports = (env, argv) => ({
   },
   target: 'node',
   output: {
-    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: path.resolve(__dirname, 'public'),
+    filename: '[name].bundle.js',
+    publicPath: path.resolve(__dirname, 'src', 'res'),
   },
   module: {
     rules: [
