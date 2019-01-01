@@ -1,6 +1,6 @@
 import './res/favicon.ico';
 
-export default component => (req, res) => res.send(`
+export default component => (`
   <!doctype html>
   <html lang="ko">
     <head>

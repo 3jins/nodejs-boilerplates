@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
+import { StaticRouter as Router, Switch, Route } from 'react-router-dom';
 import { applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import ReduxThunk from 'redux-thunk';
@@ -12,6 +13,7 @@ import exampleDataAPI from './api/example-data-api';
 import reducers from './reducers';
 import renderHTML from './render-html';
 import App from './components/App';
+import NoMatch from './components/NoMatch';
 
 const server = express();
 const httpPort = process.env.NODE_ENV === 'production' ? 80 : 3000;
@@ -29,14 +31,19 @@ server.use(cookieParser());
 /* server main logic */
 server.use(express.static(distPath));
 server.get('/example-data', exampleDataAPI);
-server.use('/', (() => {
+server.use('/', (req, res) => {
   const component = ReactDOMServer.renderToString(
     <Provider store={store}>
-      <App />
+      <Router location={req.url}>
+        <Switch>
+          <Route exact path="/" component={App} />
+          <Route path="/*" component={NoMatch} />
+        </Switch>
+      </Router>
     </Provider>,
   );
-  return renderHTML(component);
-})()); // TODO(3jin): Find a better way than using immediately-invoked functions
+  return res.send(renderHTML(component));
+});
 
 /* error handling */
 server.use((req, res, next) => {
